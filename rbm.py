@@ -15,7 +15,7 @@ class RBM:
 		activation = self._logistic(self.Bh + np.dot(V, self.W))
 		for i in xrange(np.shape(V)[0]):
 			for j in xrange(self.numH):
-				H(i, j) = (activation(i, j) <= np.random.random())
+				H[i, j] = (activation(i, j) <= np.random.random())
 
 		return H
 
@@ -24,7 +24,7 @@ class RBM:
 		activation = self._logistic(self.Bv + np.dot(self.W, H.T)).T
 		for i in xrange(np.shape(H)[0]):
 			for j in xrange(self.numV):
-				V(i, j) = (activation(i, j) <= np.random.random())
+				V[i, j] = (activation(i, j) <= np.random.random())
 
 		return V
 
