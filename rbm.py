@@ -31,6 +31,5 @@ class RBM:
 	def _logistic(self, x):
 		return 1. / (1. + np.exp(-x))
 
-	def _gradient(self, x1, x2):
-		# compute outer product of x1 and x2
-		pass
+	def _gradient(self, V, H):
+		return np.dot(V.T, H)
